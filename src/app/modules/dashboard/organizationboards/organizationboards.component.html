@@ -1,0 +1,19 @@
+<div class="head">
+  <h1>My Boards</h1>
+  <h4>The groups though which you manager members of your organization</h4>
+
+  <button (click)="addBoard()"
+  >Add Board</button>
+</div>
+
+
+<div class="groups">
+  <ul>
+    <li *ngFor="let group of groups">
+      <div class="head">{{ group.title }} <span>created by {{group.adminUsername}} at {{ group.createdDate }}</span></div>
+      <div class="description" *ngIf="group.description != null">
+        {{ group.description }}
+      </div>
+    </li>
+  </ul>
+</div>

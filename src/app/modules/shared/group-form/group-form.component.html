@@ -1,0 +1,21 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loading == true"></mat-progress-bar>
+
+<form [formGroup] ="form">
+    <mat-horizontal-stepper linear>
+      <mat-step *ngFor="let step of steps; let index = index">
+        <ng-template matStepLabel>{{ step.label }}</ng-template>
+        <formly-form
+        [form]="form.at(index)"
+        [model]="model"
+        [fields]="step.fields"
+        [options]="options[index]">
+      </formly-form>
+
+      <div>
+        <button *ngIf="index == 0" matStepperNext mat-raised-button [disabled]="form.invalid" (click)="createGroup()">Create Group</button>
+        <button *ngIf="index == 1" mat-raised-button (click)="submit()">Finish</button>
+        <button mat-stroked-button (click)="closeDialog()">Close</button>
+      </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+</form>

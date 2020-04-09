@@ -1,0 +1,57 @@
+.title{
+  width: 100%;
+}
+
+h1, p{
+  text-align: center;
+}
+
+h1{
+  font-size: 2.3rem;
+}
+
+p{
+  text-shadow: 0 0 1px #5a35ff;
+  font-size: 1.4rem;
+}
+
+.btn-group{
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.btn-group button{
+  border: none;
+  outline: none;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 50px;
+  color: #112b46;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  border: solid 2px whitesmoke;
+  transition: all 0.5s ease;
+}
+
+.btn-group button:hover{
+  border-color: #482ebdd3;
+  color: #e6d8f1;
+  background-image: linear-gradient(to left , #482ebdd3 , #3478ffe1);
+}
+
+a{
+  text-decoration: none;
+  color: #4c008c;
+  padding: 5px;
+  font-size: 0.9rem;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+
