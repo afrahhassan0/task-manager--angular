@@ -1,0 +1,26 @@
+<div class="head" *ngxPermissionsOnly = "['ADMIN']">
+  <h1>My Boards</h1>
+  <h4>The groups though which you manage members of your organization</h4>
+  <button (click)="addBoard()"
+  >Add Board</button>
+</div>
+
+<div class="head" *ngxPermissionsOnly = "['MEMBER']">
+  <h1>My Organisation Boards</h1>
+  <h4>Check your work with your boss :) </h4>
+</div>
+
+
+<div class="groups">
+  <ul>
+    <li *ngFor="let group of groups" (click)="goToGroup(group.groupId)">
+      <div class="head">
+        {{ group.title }} <span>created by {{group.adminUsername}} at {{ group.createdDate }}</span>
+        <button *ngxPermissionsOnly = " ['ADMIN'] " (click)="deleteGroup($event , group.groupId)"> Delete </button>
+      </div>
+      <div class="description" *ngIf="group.description != null">
+        {{ group.description }}
+      </div>
+    </li>
+  </ul>
+</div>

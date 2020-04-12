@@ -1,0 +1,12 @@
+.modal-form-container{
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  padding-top: 2.5rem;
+  border-left: 6px solid #3478ff;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.582);
+  position: relative;
+}

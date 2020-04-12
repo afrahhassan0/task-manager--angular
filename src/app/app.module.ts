@@ -8,7 +8,7 @@ import { LoginComponent } from './welcomepage/login/login.component';
 import { SignupComponent } from './welcomepage/signup/signup.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptorService } from './token-interceptor.service';
+import { TokenInterceptorService } from './Services/token-interceptor.service';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
@@ -19,7 +19,8 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
 import { ButtonGrpComponent } from './welcomepage/button-grp/button-grp.component'
 import { ToastrModule } from 'ngx-toastr';
 import { MatInputModule } from '@angular/material/input';
-import { FormListFieldComponent } from './modules/shared/form-list-field/form-list-field.component.type';
+import { FormListFieldComponent } from './Modules/shared/form-list-field/form-list-field.component.type';
+import {NgxPermissionsModule} from 'ngx-permissions';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { FormListFieldComponent } from './modules/shared/form-list-field/form-li
     MatButtonModule,
     MatInputModule,
     FormlyMaterialModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxPermissionsModule.forRoot()
   ],
   providers: [
     {

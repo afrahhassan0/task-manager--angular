@@ -1,8 +1,0 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
-  <div style="display: flex; align-items: flex-end;">
-  <button mat-raised-button [disabled]="form.invalid" color="primary">Join Us!</button>
-  <button mat-stroked-button routerLink="['../login']" style="margin: 0; margin-left:10px">Or Sign in</button>
-  </div>
-
-</form>

@@ -9,8 +9,17 @@ form{
   position: relative;
 }
 
+
 button{
-  position: absolute;
-  right: 2rem;
-  bottom: 3rem;
+  margin-top: 1.2rem;
+  position: relative;
+  margin-left: auto;
 }
+
+
+@media screen and (max-width: 800px){
+  form{
+    width: 80vw
+  }
+}
+

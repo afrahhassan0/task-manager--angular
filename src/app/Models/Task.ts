@@ -8,7 +8,7 @@ export class Task{
     public deadline: string,
     public status: Status,
     public checklists: Checklist[] =[],
-    public description?: string
+    public description?: string,
   ){}
 
 

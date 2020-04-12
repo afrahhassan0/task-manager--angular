@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { UserLogin } from 'src/app/Models/UserLogin';
 import { FormlyFieldConfig } from '@ngx-formly/core';
-import { UserService } from 'src/app/user.service';
+import { UserService } from 'src/app/Services/user.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserSignup } from 'src/app/Models/UserSignup';
@@ -11,7 +11,15 @@ import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-signup',
-  templateUrl: './signup.component.html',
+  template:`
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+      <div style="display: flex; align-items: flex-end;">
+        <button type="submit" (click)="onSubmit()" mat-raised-button [disabled]="form.invalid" color="primary">Join Us!</button>
+        <button type="reset" mat-stroked-button routerLink="['../login']" style="margin: 0 0 0 10px;">Or Sign in</button>
+      </div>
+    </form>
+  `,
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {

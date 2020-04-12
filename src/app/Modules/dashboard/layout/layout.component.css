@@ -1,0 +1,120 @@
+.layout{
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.side-nav{
+  padding: 1rem 0;
+  width: 250px;
+  position: sticky;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background-image: linear-gradient(to bottom , #482ebd , #3478ff);
+  color: whitesmoke;
+
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+}
+
+li{
+  border: solid whitesmoke thin;
+  border-left: none;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 85%;
+  display: inline-block;
+  padding: 10px 16px;
+  margin-bottom: 0.6rem;
+  list-style: none;
+  cursor: pointer;
+  transition: width 0.5s ease-in-out;
+  outline: none;
+}
+
+li:hover{
+  width: 95%;
+  border: solid 1px rgb(39, 13, 133);
+  box-shadow: inset -1px 0 3px rgb(40, 18, 119) ;
+}
+
+li.active{
+  width: 75%;
+  border: solid 1px rgb(39, 13, 133);
+  box-shadow: inset -1px 0 3px rgb(40, 18, 119) ;
+  text-shadow: 0 0 2px 1px rgb(40, 18, 119);
+}
+
+.menu h2{
+  height: 100px;
+  padding-top: 10%;
+  padding-left: 16px;
+}
+
+
+.main{
+  width: calc(100% - 250px);
+  min-height: 100vh;
+}
+
+.background{
+  height: 3rem;
+  width: 100%;
+}
+
+.profile{
+  height: 3rem;
+  width: 100%;
+  z-index: 2;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.336);
+}
+
+
+.content{
+  background-color: #ecf1f7;
+  /* background-image: url(../../../../../assets/background.svg); */
+  padding: 1rem;
+  position: relative;
+  min-height: 100vh;
+}
+
+
+.signout{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  height: fit-content;
+}
+
+.signout button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  background-image: linear-gradient(to right, #ff91a9c9, #ffb57dd2) ;
+  color: whitesmoke;
+  text-shadow: 0 0 2px #ff697d;
+  font-size: 1.1rem;
+  transition: background-image 0.6s ease-in;
+}
+
+.signout button:hover{
+  background-image: linear-gradient(to right, #ff91a9, #ffb57d);
+  font-weight: bold;
+}
+
+

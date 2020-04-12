@@ -1,0 +1,29 @@
+<div class="layout">
+    <div class="side-nav">
+      <div class="menu">
+        <h2>Dashboards</h2>
+        <ul>
+          <li [routerLink]="['/dashboard/personal']" routerLinkActive="active" >  Personal </li>
+          <li *ngIf="isAdmin"
+            [routerLink]="['/dashboard/shared']" routerLinkActive="active"> Created Boards </li>
+          <li  [routerLink]="['/dashboard/org']" routerLinkActive="active" > My Boards </li>
+<!--          <li> My profile </li>-->
+        </ul>
+      </div>
+      <div class="signout">
+        <button (click)="signout()">Sign Out</button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="top">
+        <div class="background"></div>
+        <div class="profile">
+          <h4> Welcome, {{ user }} </h4>
+        </div>
+      </div>
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+    </div>
+</div>
+

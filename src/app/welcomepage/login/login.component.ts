@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserLogin } from 'src/app/Models/UserLogin';
-import { UserService } from 'src/app/user.service';
-import { tap } from 'rxjs/operators'
+import { UserService } from 'src/app/Services/user.service';
+import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { FormGroup, Form } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
@@ -10,21 +10,28 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
+  template:`
+    <form [formGroup]="form">
+      <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+      <div style="display: flex; align-items: flex-end;">
+        <button type="submit" (click)="onSubmit()" mat-raised-button [disabled]="form.invalid" color="primary">Login</button>
+      </div>
+    </form>
+  `,
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
     public form: FormGroup;
     public model:UserLogin;
-    public fields: FormlyFieldConfig[]
+    public fields: FormlyFieldConfig[];
 
   constructor( private apiService: UserService, private routeTo: Router, private toastr: ToastrService ) {
 
   }
-  onSubmit(){
-    if(this.form.invalid){
+  onSubmit() {
+    if ( this.form.invalid) {
       this.toastr.warning("Complete the form please", "Form Incomplete!" , {positionClass: 'toast-top-left'})
-    }else{
+    } else {
       this.model.Username = this.model.Username.trim();
       this.apiService.login(this.model).pipe(
         tap(res => localStorage.setItem("Authentication", res.headers.get("Authentication")))
@@ -85,9 +92,6 @@ export class LoginComponent implements OnInit {
         }
       }
     ];
-
-
-
   }
 
 }

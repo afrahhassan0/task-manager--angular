@@ -1,0 +1,26 @@
+<div class="group">
+  <div class="head">
+    <h2>{{ group.title }}</h2>
+    <p>{{ group.description }}</p>
+  </div>
+  <div class="dropdown">
+
+  </div>
+</div>
+<div class="sections">
+  <div class="section"
+       cdkDropListGroup
+       cdkDragBoundary=".sections"
+       *ngFor="let info of sectionInfo;index as index">
+    <app-section
+      cdkDropList
+      [cdkDropListConnectedTo]="sectionDragDrop[index].connectedTo"
+      [cdkDropListData] ="info.data"
+      [id]="sectionDragDrop[index].id"
+      (cdkDropListDropped)="drop($event)"
+      [info] ="info"
+      (deleteClicked)="deleteTask($event)"
+      (triggerDialog)="triggerDialog($event)"
+    ></app-section>
+  </div>
+</div>

@@ -4,6 +4,7 @@ import { WelcomeComponent } from './welcomepage/welcome/welcome.component';
 import { LoginComponent } from './welcomepage/login/login.component';
 import { SignupComponent } from './welcomepage/signup/signup.component';
 import { ButtonGrpComponent } from './welcomepage/button-grp/button-grp.component';
+import {AuthGuardService} from './Services/guard.load.service';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   },
   {
     path: "dashboard",
-    loadChildren: () => import('./modules/dashboard/dashboard-personal.module').then(m => m.DashboardPersonalModule)
+    loadChildren: () => import('./Modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+    canLoad: [AuthGuardService]
   },
   {
     path: "",

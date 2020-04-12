@@ -1,6 +1,6 @@
 export class Group{
     constructor(
-      public groupId:string,
+      public groupId:number,
       public title:string,
       public createdDate:string,
       public description: string,
